@@ -1,0 +1,79 @@
+.input {
+  outline: none;
+  background-color: transparent;
+}
+
+.input--contacts {
+  padding: 8px 24px;
+  border: 1px solid var(--grey-semi-bold);
+  border-radius: 100px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 2em;
+  color: var(--grey-bold);
+  transition: background-color .3s ease-in-out;
+}
+
+.input--contacts:hover,
+.input--contacts:focus {
+  background-color: var(--grey-light);
+}
+
+.input--contacts.input--contacts-unback {
+  background-color: transparent;
+}
+
+.input--contacts-invalid {
+  border-color: var(--red);
+  color: var(--grey-middle);
+}
+
+.input--contacts::-webkit-input-placeholder {
+  color: var(--grey-middle);
+}
+
+.input--contacts::-moz-placeholder {
+  color: var(--grey-middle);
+}
+
+.input--contacts:-ms-input-placeholder {
+  color: var(--grey-middle);
+}
+
+.input--contacts::-ms-input-placeholder {
+  color: var(--grey-middle);
+}
+
+.input--contacts::placeholder {
+  color: var(--grey-middle);
+}
+
+.warning-label {
+  position: absolute;
+  top: -17px;
+  left: 24px;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--red);
+}
+
+@media (max-width: 768px) {
+  .warning-label {
+    top: -15.5px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 576px) {
+  .input--contacts {
+    padding: 3px 24px;
+  }
+
+  .warning-label {
+    top: -17px;
+    font-size: 12px;
+  }
+}

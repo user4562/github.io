@@ -1,0 +1,36 @@
+@import url('libs/normalize.css');
+
+@import url('css/fonts.css');
+@import url('css/global.css');
+
+@import url('css/elements/buttons.css');
+@import url('css/elements/links.css');
+@import url('css/elements/text.css');
+@import url('css/elements/title.css');
+@import url('css/elements/checkbox.css');
+@import url('css/elements/select.css');
+@import url('css/elements/logo.css');
+@import url('css/elements/tooltip.css');
+@import url('css/elements/inputs.css');
+@import url('css/elements/burger.css');
+@import url('css/elements/accordion.css');
+@import url('css/elements/ymap.css');
+@import url('css/elements/search.css');
+@import url('css/elements/search-form.css');
+@import url('css/elements/login.css');
+
+@import url('css/cards/names.css');
+@import url('css/cards/gallery-picture.css');
+@import url('css/cards/gallery-card.css');
+@import url('css/cards/null-content.css');
+@import url('css/cards/art-style.css');
+
+@import url('css/sections/header.css');
+@import url('css/sections/hero.css');
+@import url('css/sections/about.css');
+@import url('css/sections/gallery.css');
+@import url('css/sections/catalog.css');
+@import url('css/sections/events.css');
+@import url('css/sections/projects.css');
+@import url('css/sections/contacts.css');
+@import url('css/sections/footer.css');

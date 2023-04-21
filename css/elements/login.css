@@ -1,0 +1,75 @@
+
+.login__icon {
+  margin-right: 2px;
+
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+@media (max-width: 1024px) {
+  .login {
+    padding: 16px 90px;
+    border: 2px solid var(--violet-semi-bold);
+    border-radius: 100px;
+
+    outline-offset: -2px;
+    outline: 2px solid transparent;
+
+    -webkit-transition: outline-offset .2s ease-in-out,
+                        outline-color .2s ease-in-out,
+                        background-color .2s ease-in-out,
+                        color .2s ease-in-out,
+                        border-color .2s ease-in-out;
+
+         -o-transition: outline-offset .2s ease-in-out,
+                        outline-color .2s ease-in-out,
+                        background-color .2s ease-in-out,
+                        color .2s ease-in-out,
+                        border-color .2s ease-in-out;
+
+            transition: outline-offset .2s ease-in-out,
+                        outline-color .2s ease-in-out,
+                        background-color .2s ease-in-out,
+                        color .2s ease-in-out,
+                        border-color .2s ease-in-out;
+  }
+
+  .login::before {
+    content: none;
+  }
+
+  .login:hover {
+    background-color: var(--violet-semi-bold);
+    color: var(--white);
+  }
+
+  .login:focus-visible {
+    border-color: var(--violet-semi-bold);
+    outline-offset: 3px;
+    outline-color: var(--violet-semi-light);
+    background-color: transparent;
+  }
+
+  .login:active {
+    outline-offset: -3px;
+    outline-color: var(--violet-light);
+    outline-width: 3px;
+    color: var(--white);
+    background-color: var(--violet-bold);
+  }
+}
+
+@media (max-width: 576px) {
+  .login {
+    padding: 10px 31px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .login__icon {
+    height: 9px;
+    width: 9px;
+  }
+}

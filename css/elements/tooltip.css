@@ -1,0 +1,178 @@
+/*
+    <span class="tooltip" tabindex="0">
+      <span class="tooltip__marker"></span>
+      <span class="tooltip__popup">
+        <span class="tooltip__text">some text</span>
+      </span>
+    </span>
+*/
+
+.tooltip {
+  position: relative;
+
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+     -ms-flex-direction: column;
+         flex-direction: column;
+
+  -webkit-box-align: center;
+     -ms-flex-align: center;
+        align-items: center;
+
+  outline: none;
+
+  -webkit-transform: translateY(-7.5px);
+      -ms-transform: translateY(-7.5px);
+          transform: translateY(-7.5px);
+}
+
+.tooltip__marker {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+     -ms-flex-direction: column;
+         flex-direction: column;
+
+  -webkit-box-align: center;
+     -ms-flex-align: center;
+        align-items: center;
+
+  -webkit-box-pack: center;
+     -ms-flex-pack: center;
+   justify-content: center;
+
+  gap: 1px;
+
+  line-height: 1em;
+  height: 16px;
+  width: 16px;
+  border-radius: 100%;
+  outline-offset: -1px;
+  outline: 1px solid var(--violet-semi-bold);
+
+  -webkit-transition: background-color .2s ease-in-out;
+       -o-transition: background-color .2s ease-in-out;
+          transition: background-color .2s ease-in-out;
+
+  cursor: pointer;
+}
+
+.tooltip__marker::before,
+.tooltip__marker::after {
+  content: '';
+  width: 2px;
+  background-color: currentColor;
+
+  -webkit-transition: background-color .2s ease-in-out;
+       -o-transition: background-color .2s ease-in-out;
+          transition: background-color .2s ease-in-out;
+}
+
+.tooltip__marker::before {
+  height: 2px;
+  border-radius: 100%;
+}
+
+
+.tooltip__marker::after {
+  height: 6px;
+}
+
+.tooltip:focus-visible .tooltip__marker,
+.tooltip__marker:hover {
+  background-color: var(--violet-light);
+}
+
+.tooltip.tooltip--active .tooltip__marker {
+  background-color: var(--violet-semi-bold);
+  color: var(--white);
+}
+
+
+.tooltip.tooltip--active .tooltip__marker::before,
+.tooltip.tooltip--active .tooltip__marker::after {
+  color: var(--white);
+}
+
+.tooltip__popup {
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+
+  bottom: calc(120% + 8px);
+
+  -webkit-transition: opacity .3s ease-in-out,
+                      -webkit-transform .01s ease .3s;
+          transition: opacity .3s ease-in-out,
+                      -webkit-transform .01s ease .3s;
+       -o-transition: opacity .3s ease-in-out,
+                      transform .01s ease .3s;
+          transition: opacity .3s ease-in-out,
+                      transform .01s ease .3s;
+          transition: opacity .3s ease-in-out,
+                      transform .01s ease .3s,
+                      -webkit-transform .01s ease .3s;
+}
+
+.tooltip__text {
+  display: block;
+
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+
+  max-width: 264px;
+  padding: 9px 11px;
+
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  color: var(--white);
+
+  background-color: var(--violet-semi-bold);
+}
+
+.tooltip.tooltip--active .tooltip__popup {
+  opacity: 1;
+
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+
+  -webkit-transition: opacity .3s ease-in-out .01s,
+                      -webkit-transform .01s ease;
+          transition: opacity .3s ease-in-out .01s,
+                      -webkit-transform .01s ease;
+       -o-transition: opacity .3s ease-in-out .01s,
+                      transform .01s ease;
+          transition: opacity .3s ease-in-out .01s,
+                      transform .01s ease;
+          transition: opacity .3s ease-in-out .01s,
+                      transform .01s ease,
+                     -webkit-transform .01s ease;
+}
+
+.tooltip__popup::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  bottom: 0;
+  outline: 5px solid var(--violet-semi-bold);
+
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}

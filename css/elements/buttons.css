@@ -1,0 +1,299 @@
+/*
+* button
+* button--regular-fill
+* button--regular-empty
+* button--point-dark
+* button--point-light
+* button--text-name
+*/
+
+/* button--violet */
+
+.button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+.button--regular-fill,
+.button--regular-empty {
+  padding: 17px 35px;
+  border-radius: 100px;
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+
+  border: 3px solid var(--violet-semi-bold);
+  outline-offset: -3px;
+  outline: 3px solid transparent;
+
+  -webkit-transition: outline-offset .3s ease-in-out,
+                      outline-color .3s ease-in-out,
+                      background-color .3s ease-in-out,
+                      color .3s ease-in-out,
+                      border-color .3s ease-in-out;
+
+       -o-transition: outline-offset .3s ease-in-out,
+                      outline-color .3s ease-in-out,
+                      background-color .3s ease-in-out,
+                      color .3s ease-in-out,
+                      border-color .3s ease-in-out;
+
+          transition: outline-offset .3s ease-in-out,
+                      outline-color .3s ease-in-out,
+                      background-color .3s ease-in-out,
+                      color .3s ease-in-out,
+                      border-color .3s ease-in-out;
+}
+
+.button--regular-fill {
+  padding: 19px 32px;
+  color: white;
+  background-color: var(--violet-semi-bold);
+}
+
+.button--regular-empty {
+  padding: 11px 26px;
+  border-width: 2px;
+  font-size: 19px;
+  color: var(--violet-semi-bold);
+  background-color: transparent;
+}
+
+/* button-regular:hover */
+
+.button--regular-fill:hover {
+  border-color: var(--violet-light)
+}
+
+.button--regular-empty:hover {
+  color: white;
+  background-color: var(--violet-semi-bold);
+}
+
+/* button-regular:focus-visible */
+
+.button--regular-fill:focus-visible,
+.button--regular-empty:focus-visible {
+  border-color: var(--violet-semi-bold);
+  outline-offset: 3px;
+  outline: 3px solid var(--violet-semi-light);
+}
+
+.button--regular-empty:focus-visible {
+  outline-width: 2px;
+  color: var(--violet-semi-bold);
+  background-color: transparent;
+}
+
+/* button-regular:active */
+
+.button--regular-fill:active,
+.button--regular-empty:active {
+  background-color: var(--violet-bold);
+  outline-offset: -3px;
+  outline: 3px solid var(--violet-light);
+}
+
+.button--regular-empty:active {
+  outline-width: 3px;
+  color: var(--white);
+}
+
+/* button--point */
+
+.button--point-dark,
+.button--point-light {
+  position: absolute;
+
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+
+  -webkit-transition: background-color .3s ease-in-out,
+                      border .3s ease-in-out;
+       -o-transition: background-color .3s ease-in-out,
+                      border .3s ease-in-out;
+          transition: background-color .3s ease-in-out,
+                      border .3s ease-in-out;
+}
+
+.gallery .button--point-dark,
+.gallery .button--point-light {
+  position: relative;
+}
+
+.button--point-dark::before,
+.button--point-light::before {
+  content: '';
+  position: absolute;
+
+  top: calc(50% - 6px);
+  left: calc(50% - 7px);
+  width: 12px;
+  height: 12px;
+
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+}
+
+.button--point-dark::after,
+.button--point-light::after {
+  content: '';
+}
+
+.button--point-dark {
+  color: var(--white);
+  border: 2px solid var(--grey-semi-bold);
+  background-color: var(--grey-semi-bold);
+}
+
+.button--point-light {
+  color: var(--black);
+  border: 2px solid var(--grey-light);
+  background-color: var(--grey-light);
+}
+
+.button--point-small {
+  width: 30px;
+  height: 30px;
+}
+
+.button--point-small::before {
+  width: 7px;
+  height: 7px;
+  top: calc(50% - 3px);
+  left: calc(50% - 4px);
+}
+
+.button--point-left {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.button--point-disable {
+  color: var(--grey-semi-light);
+  border: 2px solid var(--grey-light);
+  background-color: var(--grey-light);
+  cursor: auto;
+}
+
+.button--point-hidden {
+  display: none;
+}
+
+/* button--point:hover */
+
+.button--point-dark:hover {
+  border-color: var(--violet-semi-bold);
+  background-color: var(--violet-semi-bold);
+}
+
+.button--point-light:hover {
+  border-color: var(--violet-light);
+  background-color: var(--violet-light);
+}
+
+.button--point-disable:hover {
+  border: 2px solid var(--grey-light);
+  background-color: var(--grey-light);
+}
+
+/* button--point:focus-visible */
+
+.button--point-dark:focus-visible {
+  border-color: var(--black);
+  background-color: var(--grey-semi-bold);
+}
+
+.button--point-light:focus-visible {
+  border-color: var(--violet-semi-bold);
+  background-color: var(--grey-light);
+}
+
+.button--point-disable:focus-visible {
+  border: 2px solid var(--grey-light);
+  background-color: var(--grey-light);
+}
+
+/* button--point:active */
+
+.button--point-dark:active {
+  border-color: var(--black);
+  background-color: var(--violet-semi-bold);
+}
+
+.button--point-light:active {
+  border-color: var(--violet-semi-bold);
+  background-color: var(--violet-light);
+}
+
+.button--point-disable:active {
+  border: 2px solid var(--grey-light);
+  background-color: var(--grey-light);
+}
+
+/* button--text-name */
+
+.button--text-name {
+  white-space: nowrap;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 200%;
+  color: var(--grey-bold);
+  border-bottom: 1px solid transparent;
+  transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+}
+
+.button--text-name:hover {
+  border-color: var(--violet-semi-bold);
+}
+
+.button--text-name:focus-visible {
+  background-color: var(--violet-semi-bold);
+}
+
+.button--text-name:active {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+@media (max-width: 576px) {
+
+  .button--regular-fill,
+  .button--regular-empty {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .button--regular-fill {
+    padding: 9px 16px;
+  }
+
+  .button--regular-empty {
+    padding: 10px 26px;
+  }
+
+  .button--point-dark,
+  .button--point-light {
+    width: 30px;
+    height: 30px;
+  }
+
+  .button--point-dark::before,
+  .button--point-light::before {
+    width: 7px;
+    height: 7px;
+    top: calc(50% - 3px);
+    left: calc(50% - 4px);
+  }
+}

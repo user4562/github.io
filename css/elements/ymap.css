@@ -1,0 +1,24 @@
+.contacts__map {
+  height: 700px;
+  width: 100%;
+}
+
+[class*="ground-pane"] {
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+
+.contacts__map *[class*="controls"],
+.contacts__map *[class*="copyright"] {
+  display: none;
+}
+
+input[class*="ymap"] {
+  display: none;
+}
+
+@media (max-width: 576px) {
+  .contacts__map {
+    height: 323px;
+  }
+}

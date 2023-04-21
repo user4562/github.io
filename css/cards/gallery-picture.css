@@ -1,0 +1,119 @@
+.gallery__item {
+  position: relative;
+
+  width: 100%;
+  height: 350px;
+  outline-offset: -3px;
+  outline: 3px solid transparent;
+  font-size: 0;
+
+  -webkit-transition: outline .3s ease-in-out;
+       -o-transition: outline .3s ease-in-out;
+          transition: outline .3s ease-in-out;
+}
+
+.gallery__picture {
+  width: 100%;
+  height: 100%;
+
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.gallery__item::before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+
+  top: 25px;
+  left: 25px;
+  right: 25px;
+  bottom: 25px;
+
+  background-image: url('../../img/icons/gallery-search.svg');
+  background-color: rgba(0, 0, 0, 0.5);
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  -webkit-transition: opacity .3s ease-in-out;
+       -o-transition: opacity .3s ease-in-out;
+          transition: opacity .3s ease-in-out;
+}
+
+.gallery__item::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  opacity: 0;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-color: var(--violet-semi-bold);
+
+  -webkit-transition: opacity .3s ease-in-out;
+       -o-transition: opacity .3s ease-in-out;
+          transition: opacity .3s ease-in-out;
+}
+
+.gallery__item:hover.gallery__item::before {
+  opacity: 1;
+}
+
+.gallery__item:focus-visible,
+.gallery__item[type="button"]:focus-visible,
+.gallery__item[type="reset"]:focus-visible,
+.gallery__item[type="submit"]:focus-visible {
+  outline: 3px solid var(--violet-semi-bold);
+}
+
+.gallery__item:focus-visible.gallery__item::before {
+  opacity: 0;
+}
+
+.gallery__item:active {
+  outline-color: transparent;
+}
+
+.gallery__item:active.gallery__item::before {
+  opacity: 1;
+}
+
+.gallery__item:active.gallery__item::after {
+  opacity: 0.4;
+}
+
+@media (max-width: 1024px) {
+  .gallery__item {
+    height: 315px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery__item {
+    height: 330px;
+  }
+
+  .gallery__picture {
+    -o-object-position: 0;
+       object-position: 0;
+    -o-object-position: center -5px;
+       object-position: center -5px;
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery__item {
+    height: 367px;
+  }
+
+  .gallery__picture {
+    -o-object-position: center top;
+       object-position: center top;
+  }
+}

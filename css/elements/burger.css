@@ -1,0 +1,70 @@
+.burger {
+  display: none;
+  position: relative;
+  padding-top: 4px;
+}
+
+.burger__icon-sm {
+  display: none;
+}
+
+.burger {
+  z-index: 1;
+  outline: none;
+}
+
+.burger rect,
+.burger path {
+  transition: fill .3s ease-in-out;
+}
+
+.burger:hover rect,
+.burger:hover path {
+  fill: var(--violet-semi-light);
+}
+
+.burger:focus-visible rect,
+.burger:focus-visible path {
+  fill: white;
+}
+
+.burger::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -2px;
+  left: -6px;
+  right: -6px;
+  bottom: -2px;
+  background-color: transparent;
+  transition: background-color .3s ease-in-out;
+}
+
+.burger:focus-visible.burger::before {
+  background-color: var(--violet-bold);
+}
+
+
+@media (max-width: 1024px) {
+  .burger {
+    display: block;
+  }
+}
+
+@media (max-width: 576px) {
+  .burger {
+    padding-top: 0px;
+  }
+
+  .burger::before {
+    content: none;
+  }
+
+  .burger__icon-md {
+    display: none;
+  }
+
+  .burger__icon-sm {
+    display: block;
+  }
+}

@@ -1,0 +1,32 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+.names {
+  padding: 25px 0;
+  width: 100%;
+
+  display: -ms-grid;
+  display: grid;
+
+  -ms-flex-pack: justify;
+  -webkit-box-pack: justify;
+  grid-auto-flow: column;
+  justify-content: space-between;
+
+  --columns: 3;
+  --rows: 9;
+
+  grid-template-columns: repeat(var(--columns), minmax(-webkit-min-content, -webkit-max-content));
+  grid-template-columns: repeat(var(--columns), minmax(min-content, max-content));
+  grid-template-rows: repeat(var(--rows), 32px);
+}
+
+@media (max-width: 576px) {
+  .names {
+    padding: 20px 0;
+  }
+}

@@ -1,0 +1,119 @@
+.catalog {
+  padding: 80px 0 83px;
+  background-color: var(--white);
+}
+
+.catalog__title {
+  margin-bottom: 16px;
+}
+
+.catalog__text {
+  width: 1080px;
+  max-width: 100%;
+  margin-bottom: 39px;
+}
+
+.catalog__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.catalog__persons {
+  width: 50%;
+  padding-right: 50px;
+}
+
+.catalog__accordions {
+  width: 50%;
+}
+
+/* catalog -> person */
+
+.person {
+  display: none;
+  font-size: 0;
+  width: 100%;
+}
+
+.person--current {
+  display: block;
+}
+
+.person__picture {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.person__name {
+  margin-bottom: 8px;
+}
+
+.person__date {
+  display: block;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 1024px) {
+  .catalog__persons {
+    padding-right: 25px;
+  }
+
+  .catalog__accordions {
+    padding-left: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .catalog__text {
+    margin-bottom: 19px;
+  }
+
+  .catalog__persons {
+    width: 100%;
+    padding: 0;
+  }
+
+  .catalog__accordions {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 52px;
+
+    -webkit-box-ordinal-group: 0;
+               -ms-flex-order: -1;
+                        order: -1;
+  }
+
+  .person__picture {
+    margin-bottom: 20px;
+  }
+
+  .person__date {
+    margin-bottom: 7px;
+  }
+}
+
+@media (max-width: 576px) {
+  .catalog {
+    padding: 51px 0 51px;
+  }
+
+  .catalog__title {
+    margin-bottom: 12px;
+  }
+
+  .catalog__text {
+    display: none;
+  }
+
+  .catalog__accordions {
+    margin-bottom: 50px;
+  }
+
+  .person__date {
+    margin-bottom: 12px;
+  }
+}
